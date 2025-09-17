@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <body>
+        
+        <div class="particles" id = "particles"> </div><!-- for the floating particles -->
+
+
+        <div class="landing-page" id="landingPage">
+            <h1 class="hero-title">Lucy</h1>
+            <P class="hero-subtitle">Experience the future of conversation with our advanced AI assistant. Get instant answers, creative solutions, and engaging interactions powered by cutting-edge technology.</P>
+            
+            <div class="features-grid">
+                <div class="card card-one">
+                    <span class="card-icon">🧠</span>
+                    <h3 class="card-title">Smart AI</h3>
+                    <p class="card-desc">Advanced natural language processing for human-like conversations</p>
+                </div>
+
+                <div class="card card-two">
+                    <span class="card-icon">⚡</span>
+                    <h3 class="card-title">Lightning Fast</h3>
+                    <p class="card-desc">Instant responses with real-time processing capabilities</p>
+                </div>
+
+                <div class="card card-three">
+                    <span class="card-icon">🎨</span>
+                    <h3 class="card-title">Creative Solutions</h3>
+                    <p class="card-desc">Generate ideas, solve problems, and explore possibilities</p>
+                </div>
+                
+                <div class="card card-four">
+                    <span class="card-icon">🔒</span>
+                    <h3 class="card-title">Secure & Private</h3>
+                    <p class="card-desc">Your conversations are protected with enterprise-grade security</p>
+                </div>
+            </div>
+            <button class="start-chat-btn" onclick="startChat()">
+                Start Chatting Now
+            </button>
+        </div>
+        
+
+        <!-- now the message part comes-->
+        <div class="chat-container" id = "chatContainer">
+            <div class="chat-header">
+                <div class="bot-info">
+                    <div class="bot-avatar">🐰</div>
+                    <div class="bot-details">
+                        <h3>Lucy, Ask anything. Get everything.</h3>
+                        <div class="bot-status">
+                            <span class="status-dot"></span>
+                            Online and Ready
+                        </div>
+                    </div>
+                </div>
+                <button class="quick-btn" onclick="goBack()" style="background: rgba(255,255,255,0.2);"> ← Back</button> 
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div>Hello! I'm your AI assistant. How can I help you today?</div>
+                    <div class="message-time" id="welcomeTime"></div>
+                </div>
+            </div>
+
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="typing-dots">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <div class="quick-actions">
+                    <button class="quick-btn" onclick="sendQuickMessage('Tell me a joke')">Tell me a joke</button>
+                    <button class="quick-btn" onclick="sendQuickMessage('What can you do?')">What can you do?</button>
+                    <button class="quick-btn" onclick="sendQuickMessage('Help me brainstorm')">Help me brainstorm</button>
+                    <button class="quick-btn" onclick="sendQuickMessage('Explain something complex')">Explain something</button>
+                </div>
+                
+                <div class="input-container">
+                    <textarea 
+                        class="message-input" 
+                        id="messageInput" 
+                        placeholder="Type your message here..."
+                        rows="1"
+                        onkeypress="handleKeyPress(event)"
+                        oninput="autoResize(this)"
+                    ></textarea>
+                    <button class="send-btn" onclick="sendMessage()">
+                        ➤
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+        
+        
+
+        <script src = "script.js"></script>
+    </body>
+</html>
