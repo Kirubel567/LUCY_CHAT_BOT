@@ -21,6 +21,14 @@ app.get('/', (req, res)=>{
     res.render('index.ejs'); 
 });  
 
+app.get('/chat', (req, res)=>{
+    res.render('chat.ejs'); 
+}); 
+
+app.get('/home', (req, res)=>{
+    res.redirect('/'); 
+}); 
+
 app.listen(port, ()=>{
     console.log(`listenting on port ${port}`); 
 }); 

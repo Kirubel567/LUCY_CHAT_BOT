@@ -174,7 +174,7 @@ body{
 }
 
 .chat-container{
-    display: none; /* this totally removes the element from existence */
+    display: block; /* this totally removes the element from existence */
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
@@ -183,9 +183,10 @@ body{
     z-index: 2;
 }
 
-.chat-container.active{ /* active here is just a class that we add later */
+/* active here is just a class that we add later */
+/* .chat-container.active{ 
     display: block;
-}
+} */
 
 .chat-header {
     background: rgba(0, 0, 0, 0.3);

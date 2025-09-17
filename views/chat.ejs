@@ -1,0 +1,63 @@
+<%- include("partials/header") %>
+
+<!-- now the message part comes-->
+        <div class="chat-container" id = "chatContainer">
+            <div class="chat-header">
+                <div class="bot-info">
+                    <div class="bot-avatar">🐰</div>
+                    <div class="bot-details">
+                        <h3>Lucy, Ask anything. Get everything.</h3>
+                        <div class="bot-status">
+                            <span class="status-dot"></span>
+                            Online and Ready
+                        </div>
+                    </div>
+                </div>
+                <form action="/home" method="GET"> 
+                    <button class="quick-btn" onclick="goBack()" style="background: rgba(255,255,255,0.2);"> ← Back</button>
+                </form>
+                 
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div>Hello! I'm your AI assistant. How can I help you today?</div>
+                    <div class="message-time" id="welcomeTime"></div>
+                </div>
+            </div>
+
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="typing-dots">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <div class="quick-actions">
+                    <button class="quick-btn" onclick="sendQuickMessage('Tell me a joke')">Tell me a joke</button>
+                    <button class="quick-btn" onclick="sendQuickMessage('What can you do?')">What can you do?</button>
+                    <button class="quick-btn" onclick="sendQuickMessage('Help me brainstorm')">Help me brainstorm</button>
+                    <button class="quick-btn" onclick="sendQuickMessage('Explain something complex')">Explain something</button>
+                </div>
+                
+                <div class="input-container">
+                    <textarea 
+                        class="message-input" 
+                        id="messageInput" 
+                        placeholder="Type your message here..."
+                        rows="1"
+                        onkeypress="handleKeyPress(event)"
+                        oninput="autoResize(this)"
+                    ></textarea>
+                    <button class="send-btn" onclick="sendMessage()">
+                        ➤
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+    
+<%- include("partials/footer") %>
